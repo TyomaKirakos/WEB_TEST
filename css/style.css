@@ -80,6 +80,30 @@
     background-color: var(--light-blue-hover);
 }
 
+/* Модальное окно */
+
+.modal{
+    background-color: var(--soft-blue);
+    border: 2px solid var(--main-col);
+    padding: 15px 20px;
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    opacity: 100;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
 /* шапка */
 .header{
     width: 100%;

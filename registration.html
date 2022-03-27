@@ -7,7 +7,7 @@
     <title>Регистрация</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="js/index.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
 </head>
 <body>
     <main class="log-reg-part">
@@ -15,12 +15,12 @@
             <h2 class="form__heading">Регистрация</h2>
             <div class="form__inputs">
                 <label for="login-input" class="inputs__label">Логин</label>
-                <input type="text" class="inputs__input login-input just-text" name="login-input">
+                <input type="text" required class="inputs__input login-input just-text" name="login-input" minlength="5" maxlength="20" title="Логин должен содержать от 5 до 20 символов и может состоять из латинских букв, цифр и нижнего подчёркивания" name="login-input" pattern="^\w+$">
                 <p class="submit-block__log-reg-error-text incorrect-log-error">Некорректный логин</p>
             </div>
             <div class="form__inputs">
                 <label for="password-input" class="inputs__label">Пароль</label>
-                <input type="password" class="inputs__input password-input just-text" name="password-input">
+                <input type="password" required class="inputs__input password-input just-text" name="password-input" minlength="5" maxlength="40" title="Пароль должен содержать от 5 до 40 символов и не дожен содержать пробел" name="password-input" pattern="^[^\s]*$">
                 <p class="submit-block__log-reg-error-text incorrect-pswd-error">Некорректный пароль</p>
             </div>
             <div class="form__submit-block submit-block">

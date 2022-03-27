@@ -7,7 +7,7 @@
     <title>Вход</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="js/index.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
 </head>
 <body>
     <main class="log-reg-part">
@@ -15,15 +15,15 @@
             <h2 class="form__heading">Вход</h2>
             <div class="form__inputs">
                 <label for="login-input" class="inputs__label">Логин</label>
-                <input type="text" class="inputs__input login-input just-text" name="login-input">
+                <input type="text" required class="inputs__input login-input just-text" minlength="5" maxlength="20" title="Логин должен содержать от 5 до 20 символов и может состоять из латинских букв, цифр и нижнего подчёркивания" name="login-input" pattern="^\w+$">
             </div>
             <div class="form__inputs">
                 <label for="password-input" class="inputs__label">Пароль</label>
-                <input type="password" class="inputs__input password-input just-text" name="password-input">
+                <input type="password" required class="inputs__input password-input just-text" minlength="5" maxlength="40" title="Пароль должен содержать от 5 до 40 символов и не дожен содержать пробел" name="password-input" pattern="^[^\s]*$">
             </div>
             <div class="form__submit-block submit-block">
                 <p class="submit-block__log-reg-error-text log-or-pswd-error">Неверный логин или пароль</p>
-                <button class="submit-block__submit-btn login-btn btn">Вход</button>
+                <button type="submit" class="submit-block__submit-btn login-btn btn">Вход</button>
                 <p class="submit-block__additive-forwarding">Нет аккаунта? <a href="registration.html" class="additive-forwarding__link">Регистрация</a></p>
             </div>
         </form>
