@@ -7,14 +7,14 @@
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="js/index.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
 </head>
 <body>
     <header class="header">
         <div class="header__content container">
             <a href="index.html" class="header__logo logo"><img src="img/Logo.svg" alt="WEB_TEST" class="logo__img"></a>
             <div class="header__head-btns head-btns not-authorized-btns">
-                <p class="head-btn head-btns__logout-btn">Выход</p>
+                <p class="head-btn head-btns__logout-btn logout-btn">Выход</p>
                 <a href="profile.html" class="head-btn head-btns__profile-btn">Профиль</a>
             </div>
         </div>
@@ -38,7 +38,7 @@
                             Ваш уровень
                         </p>
                         <p class="users-info-text-block__info just-text level-info">Пользователь</p>
-                        <button class="users-info-text-block__log-out-btn">Выйти</button>
+                        <button class="users-info-text-block__log-out-btn logout-btn">Выйти</button>
                     </div>
                 </div>
                 <div class="profile-page__users-results users-results">

@@ -7,6 +7,8 @@ const login = () => {
     const loginPattern = /^\w+$/;
     const passwordPattern = /^[^\s]*$/;
 
+    localStorage.currentUser = 'none';
+
     let users = JSON.parse(localStorage.users);
     console.log(users);
 

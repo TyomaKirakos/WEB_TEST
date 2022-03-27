@@ -8,6 +8,8 @@ const registration = () => {
     const loginPattern = /^\w+$/;
     const passwordPattern = /^[^\s]*$/;
 
+    localStorage.currentUser = 'none';
+
     let users = JSON.parse(localStorage.users);
 
     loginInput.addEventListener('input', function(){
