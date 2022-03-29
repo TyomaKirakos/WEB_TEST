@@ -131,6 +131,10 @@
     align-items: center;
 }
 
+.authorized-btns{
+    display: none;
+}
+
 .head-btn{
     position: relative;
     font-weight: 400;
