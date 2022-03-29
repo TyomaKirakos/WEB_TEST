@@ -8,9 +8,10 @@ const registration = () => {
     const loginPattern = /^\w+$/;
     const passwordPattern = /^[^\s]*$/;
 
-    localStorage.currentUser = 'none';
-
+    let isLoginUsed = false;
     let users = JSON.parse(localStorage.users);
+
+    localStorage.currentUser = 'none';
 
     loginInput.addEventListener('input', function(){
         if(loginInput.value[loginInput.value.length-1] == ' '){
@@ -31,7 +32,7 @@ const registration = () => {
         if(loginInput.value == ''){
             loginErrorText.textContent = 'Введите логин';
             loginErrorText.style.display = 'block';
-        } else if(loginInput.value.length <= 5 || loginInput.value.length >= 20) {
+        } else if(loginInput.value.length < 5 || loginInput.value.length > 20) {
             loginErrorText.textContent = 'Логин от 5 до 20 символов';
             loginErrorText.style.display = 'block';
         } else if (loginInput.value.includes(' ')){
@@ -45,7 +46,7 @@ const registration = () => {
         if(passwordInput.value == ''){
             passwordErrorText.textContent = 'Введите пароль';
             passwordErrorText.style.display = 'block';
-        } else if(passwordInput.value.length <= 5 || passwordInput.value.length >= 40) {
+        } else if(passwordInput.value.length < 5 || passwordInput.value.length > 40) {
             passwordErrorText.textContent = 'Пароль от 5 до 40 символов';
             passwordErrorText.style.display = 'block';
         } else if(passwordInput.value.includes(' ')){
@@ -55,9 +56,12 @@ const registration = () => {
 
         users.forEach(user => {
             if (user.login == loginInput.value.trim()){
-                loginErrorText.textContent = 'Логин уже занят';
-                loginErrorText.style.display = 'block';
-            } else if(loginInput.value.length >= 5 && passwordInput.value.length >= 5 && loginInput.value.length <= 20 && passwordInput.value.length <= 40){
+                isLoginUsed = true;
+            } 
+        });
+
+        if (!isLoginUsed){
+            if(loginInput.value.length >= 5 && passwordInput.value.length >= 5 && loginInput.value.length <= 20 && passwordInput.value.length <= 40 && loginPattern.test(loginInput.value) && passwordPattern.test(passwordInput.value)){
                 let user = {
                     id: users.length,
                     role: 0,
@@ -72,7 +76,11 @@ const registration = () => {
                 localStorage.currentUser = user.id;
                 window.location.href = 'profile.html';
             };
-        });
+        } else {
+            loginErrorText.textContent = 'Логин уже занят';
+            loginErrorText.style.display = 'block';
+        }
+
         e.preventDefault();
     })
 }

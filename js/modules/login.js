@@ -5,12 +5,13 @@ const login = () => {
     const errorText = document.querySelector('.submit-block__log-reg-error-text');
 
     const loginPattern = /^\w+$/;
-    const passwordPattern = /^[^\s]*$/;
+    // const passwordPattern = /^[^\s]*$/;
+
+    let users = JSON.parse(localStorage.users);
+    let isLoginExist = false;
 
     localStorage.currentUser = 'none';
 
-    let users = JSON.parse(localStorage.users);
-    console.log(users);
 
 
     loginInput.addEventListener('input', function(){
@@ -38,6 +39,7 @@ const login = () => {
         } else{
             users.forEach(user => {
                 if (user.login == loginInput.value.trim()){
+                    isLoginExist = true;
                     if (user.password == passwordInput.value.trim()){
                         localStorage.currentUser = user.id;
                         window.location.href = 'profile.html';
@@ -45,11 +47,13 @@ const login = () => {
                         errorText.textContent = 'Неверный пароль';
                         errorText.style.display = 'block';
                     }
-                } else{
-                    errorText.textContent = 'Такого логина нет';
-                    errorText.style.display = 'block';
                 }
             });
+
+            if (isLoginExist == false){
+                errorText.textContent = 'Такого логина нет';
+                errorText.style.display = 'block';
+            }
         };
         e.preventDefault();
     })
