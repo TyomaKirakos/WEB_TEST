@@ -9,22 +9,24 @@ let currentPageURL = document.location.href;
 currentPageURL = currentPageURL.split('/');
 
 
-if (currentPageURL[currentPageURL.length-1] == 'index.html'){
-    checkLocalStorage();
-    testDirecting();
-    logout();
-}
+// if (currentPageURL[currentPageURL.length-1] == 'index.html'){
+
+// }
 
 if (currentPageURL[currentPageURL.length-1] == 'login.html'){
     login();
-}
-
-if (currentPageURL[currentPageURL.length-1] == 'registration.html'){
+} else if (currentPageURL[currentPageURL.length-1] == 'registration.html'){
     registration();
-}
-
-if (currentPageURL[currentPageURL.length-1] == 'profile.html'){
+} else if (currentPageURL[currentPageURL.length-1] == 'profile.html'){
     profileGenerating();
+    logout();
+} else if (currentPageURL[currentPageURL.length-1] == 'index.html'){
+    checkLocalStorage();
+    testDirecting();
+    logout();
+} else {
+    checkLocalStorage();
+    testDirecting();
     logout();
 }
 
