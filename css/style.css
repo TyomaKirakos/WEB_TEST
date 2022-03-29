@@ -10,6 +10,10 @@
     margin: 0 auto;
 }
 
+.main{
+    margin-bottom: 150px;
+}
+
 .logo{
     width: 150px;
 }
@@ -113,7 +117,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .header__content{
@@ -312,7 +316,6 @@
     align-items: center;
     justify-content: space-between;
     column-gap: 230px;
-    margin-bottom: 150px;
 }
 
 .desc-txt__title{
@@ -483,6 +486,74 @@
     display: none;
 }
 
+/* profile.html */
+
+.profile-page__heading{
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.users-info{
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #DDDDDD;
+    margin-bottom: 40px;
+}
+
+.profile-picture{
+    margin-right: 45px;
+    min-width: 150px;
+    max-width: 280px;
+    width: 45%;
+}
+
+.users-info-text-block__info-name, .users-results__result{
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--main-col);
+}
+
+.users-info-text-block__info{
+    margin-bottom: 20px;
+}
+
+.users-info-text-block__log-out-btn{
+    background-color: var(--main-col);
+    padding: 10px 20px;
+}
+
+.users-info-text-block__log-out-btn:hover{
+    background-color: var(--main-col-hover);
+}
+
+.users-results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.users-results__result{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.result__number{
+    color: var(--dark-blue);
+}
+
+.users-result__edit-tasks-btn{
+    margin-top: 25px;
+    padding: 15px 25px;
+    background-color: var(--main-col);
+}
+
+.users-result__edit-tasks-btn:hover{
+    background-color: var(--main-col-hover);
+}
+
 /* fast-test.html & marathon-test.html*/
 
 .test-start-scrn{
@@ -490,7 +561,6 @@
     grid-template-columns: auto auto;
     grid-template-rows: 0.5fr 0.3fr auto;
     row-gap: 30px;
-    margin-bottom: 150px;
 }
 
 .test-start-scrn__test-text-info{
@@ -583,10 +653,6 @@
 /* ------------- 1470 px и меньше ----------- */
 @media screen and (max-width: 1620px) {
     /* общие стили */
-    .header{
-        margin-bottom: 20px;
-    }
-
     .head-btn{
         font-size: 18px;
         margin-right: 20px;
@@ -744,6 +810,10 @@
         width: 90%;
     }
 
+    .main{
+        margin-bottom: 45px;
+    }
+
     .logo{
         width: 105px;
     }
@@ -837,10 +907,6 @@
         height: 50px;
     }
 
-    .test-desc{
-        margin-bottom: 40px;
-    }
-
     .desc-txt__title{
         margin-bottom: 15px;
     }
@@ -856,7 +922,6 @@
         flex-direction: column;
         row-gap: 0;
         column-gap: 0;
-        margin-bottom: 45px;
     }
 
     .test-start-scrn__test-desc{
@@ -898,6 +963,20 @@
 
     .submit-block__log-reg-error-text{
         font-size: 14px;
+    }
+
+    /* profile.html */
+
+    .users-info{
+        justify-content: space-between;
+    }
+
+    .profile-picture{
+        margin-right: 10px;
+    }
+
+    .users-info-text-block__info-name, .users-results__result{
+        font-size: 18px;
     }
 }
 
