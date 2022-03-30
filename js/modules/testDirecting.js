@@ -7,7 +7,7 @@ const testDirecting = () => {
         if (localStorage.currentUser == 'none'){
             modalAppearance();
         } else{
-            window.location.href = 'fast-test.html';
+            window.location.href = 'start-fast-test.html';
         }
     });
     
@@ -15,7 +15,7 @@ const testDirecting = () => {
         if (localStorage.currentUser == 'none'){
             modalAppearance();
         } else{
-            window.location.href = 'marathon-test.html';
+            window.location.href = 'start-marathon-test.html';
         }
     });
 

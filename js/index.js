@@ -7,20 +7,16 @@ import profileGenerating from "./modules/profileGenerating.js"
 
 let currentPageURL = document.location.href;
 currentPageURL = currentPageURL.split('/');
+currentPageURL = currentPageURL[currentPageURL.length-1];
 
-
-// if (currentPageURL[currentPageURL.length-1] == 'index.html'){
-
-// }
-
-if (currentPageURL[currentPageURL.length-1] == 'login.html'){
+if (currentPageURL == 'login.html'){
     login();
-} else if (currentPageURL[currentPageURL.length-1] == 'registration.html'){
+} else if (currentPageURL == 'registration.html'){
     registration();
-} else if (currentPageURL[currentPageURL.length-1] == 'profile.html'){
+} else if (currentPageURL == 'profile.html'){
     profileGenerating();
     logout();
-} else if (currentPageURL[currentPageURL.length-1] == 'index.html'){
+} else if (currentPageURL == 'index.html'){
     checkLocalStorage();
     testDirecting();
     logout();

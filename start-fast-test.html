@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
+    <title>WEB_TEST</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <script type="module" src="js/index.js" defer></script>
+    <script src="js/index.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -24,34 +24,16 @@
             <div class="main__link-to-main-block link-to-main-block">
                 <a href="index.html" class="link-to-main-block__link-to-main just-text">← На главную</a>
             </div>
-            <div class="main__profile-page profile-page">
-                <h1 class="profile-page__heading big-heading">Личный кабинет</h1>
-                <div class="profile-page__users-info users-info">
-                    <img src="img/profile/profile-picture.svg" alt="Your profile picture" class="users-info__profile-picture profile-picture">
-                    <div class="users-info__users-info-text-block users-info-text-block">
-                        <p class="users-info-text-block__info-name blue-bold-text">
-                            Логин
-                        </p>
-                        <p class="users-info-text-block__info just-text login-info">AmogusAbobin8585</p>
-
-                        <p class="users-info-text-block__info-name blue-bold-text">
-                            Ваш уровень
-                        </p>
-                        <p class="users-info-text-block__info just-text level-info">Пользователь</p>
-                        <button class="btn users-info-text-block__log-out-btn logout-btn">Выйти</button>
-                    </div>
+            <div class="main__test-start-scrn test-start-scrn">
+                <div class="test-start-scrn__test-text-info test-text-info">
+                    <h1 class="big-heading test-text-info__heading">Быстрый тест</h1>
+                    <h3 class="test-text-info__sub-heading sub-heading">Нажмите на кнопку, когда будете готовы!</h3>
                 </div>
-                <div class="profile-page__users-results users-results">
-                    <p class="users-results__result blue-bold-text">
-                        Ваш лучший результат: <span class="result__number best-result">86%</span>
-                    </p>
-                    <p class="users-results__result blue-bold-text">
-                        Ваш последний результат: <span class="result__number last-result">12%</span>
-                    </p>
-                    <p class="users-results__result blue-bold-text">
-                        Время прохождения лучшего результата: <span class="result__number time-of-best">02:20</span>
-                    </p>
-                    <button class="users-result__edit-tasks-btn edit-tasks-btn btn">Редактировать задания</button>
+                <p class="test-start-scrn__test-desc just-text"><span class="important-text">Быстрый тест</span> состоит из 5 вопросов. При нажатии на кнопку запустится тест.</p>
+                <img src="img/test/test.svg" alt="Быстрый тест" class="test-start-scrn__img img">
+                <div class="test-start-scrn__test-btns-block test-btns-block">
+                    <a href="fast-test.html" class="test-btns-block__start-test-btn fast-test-start-btn">Начать</a>
+                    <a href="best-results.html" class="test-btns-block__result-btn btn results-btn">Лучшие результаты</a>
                 </div>
             </div>
         </div>
