@@ -636,6 +636,7 @@
 /* Блок вопроса */
 
 .task-block{
+    width: 100%;
     padding: 50px 100px;
     background-color: var(--soft-blue);
     border-radius: 10px;
@@ -648,6 +649,7 @@
 
 .task-block__task-text{
     margin-bottom: 40px;
+    white-space: normal;
 }
 
 .task-options{
@@ -656,7 +658,6 @@
 }
 
 .task-options__task-option{
-    color: #000;
     display: flex;
     align-items: center;
     width: 100%;
@@ -711,6 +712,11 @@
     height: 100%;
     filter: brightness(1.5) saturate(200%);
     -webkit-filter: brightness(1.5) saturate(200%);
+}
+
+.task-option__option-text{
+    color: #000;
+    white-space: normal;
 }
 
 .next-back-btns{
