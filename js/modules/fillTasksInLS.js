@@ -17,7 +17,7 @@ let fillTasksInLS = () => {
                 id: 2,
                 question: "Как объявляются функции в JavaScript?",
                 options: ["def", "void", "fun", "function"],
-                rightAnswers: ["function"]
+                rightAnswers: ["function", "fun"]
             },
             {
                 id: 3,
