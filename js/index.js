@@ -6,6 +6,7 @@ import logout from "./modules/logout.js";
 import profileGenerating from "./modules/profileGenerating.js";
 import fillTasksInLS from "./modules/fillTasksInLS.js";
 import fastTest from "./modules/fastTest.js";
+import marathonTest from "./modules/marathonTest.js"
 import stopwatch from "./modules/stopwatch.js";
 
 let currentPageURL = document.location.href;
@@ -26,6 +27,7 @@ if (currentPageURL == 'login.html'){
     stopwatch();
 } else if(currentPageURL == 'marathon-test.html'){
     stopwatch();
+    marathonTest();
 } else if (currentPageURL == 'index.html'){
     checkLocalStorage();
     testDirecting();

@@ -1,4 +1,4 @@
-let fastTest = () => {
+let marathonTest = () => {
     const linkBlock = document.querySelector('.link-block-without-stopwatch');
     const linkWithStopwatchBlock = document.querySelector('.test-page-link-to-main');
     const testBlock = document.querySelector('.test-page__tasks-block');
@@ -20,13 +20,14 @@ let fastTest = () => {
     linkBlock.style.display = 'none';
 
     // Отбор заданий в случайном пордяке
-    for (let i = 0; i < 5; i++){
+
+    for (let i = 0; i < JSON.parse(localStorage.tasks).length; i++){
         let taskNumber = Math.floor(Math.random() * (tasks.length));
         currentTasks.push(tasks[taskNumber]);
         tasks.splice(taskNumber, 1);
     }
 
-    // console.log(currentTasks);
+    console.log(currentTasks);
 
     // генерация карточек с заданиями
     currentTasks.forEach((task, index) => {
@@ -151,7 +152,7 @@ let fastTest = () => {
         </div>
         <div class="result-page__result-block-btns result-block-btns btns-block">
             <a href="index.html" class="result-block-btns__end-btn end-btn">Завершить</a>
-            <a href="start-fast-test.html" class="result-block-btns__retake-test-btn retake-fast-test-btn btn">Пройти ещё раз</a>
+            <a href="start-marathon-test.html" class="result-block-btns__retake-test-btn retake-marathon-test-btn btn">Пройти ещё раз</a>
             <a href="best-results.html" class="results-btn btn result-block-btns__results-btn">Лучшие результаты</a>
         </div>`
         } else{
@@ -177,7 +178,7 @@ let fastTest = () => {
         </div>
         <div class="result-page__result-block-btns result-block-btns btns-block">
             <a href="index.html" class="result-block-btns__end-btn end-btn">Завершить</a>
-            <a href="start-fast-test.html" class="result-block-btns__retake-test-btn retake-fast-test-btn btn">Пройти ещё раз</a>
+            <a href="start-marathon-test.html" class="result-block-btns__retake-test-btn retake-marathon-test-btn btn">Пройти ещё раз</a>
             <a href="best-results.html" class="results-btn btn result-block-btns__results-btn">Лучшие результаты</a>
         </div>`
         }
@@ -200,4 +201,4 @@ let fastTest = () => {
     }
 }
 
-export default fastTest;
+export default marathonTest;
