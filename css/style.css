@@ -883,6 +883,51 @@
     order: 2;
 }
 
+/* best-results.html */
+
+.best-results-page__heading {
+    margin-bottom: 30px;
+}
+
+.best-result-table{
+    width: 100%;
+    background-color: var(--soft-blue);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: grid;
+    grid-template-columns: 0.6fr 1.1fr 1fr 1fr;
+}
+
+.table-cell{
+    border: 1px solid #fff;
+    border-collapse: collapse;
+    padding: 15px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.table-cell__text{
+    color: var(--main-col);
+    text-align: center;
+    width: 100%;
+    /* min-width: 30%;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.table-head > .table-cell__text{
+    font-weight: bold;
+    justify-self: center;
+}
+
 /* -------------------------------------- Медиа запросы ----------------------------------------------- */
 /* ------------- 1620 px и меньше ----------- */
 @media screen and (max-width: 1620px) {

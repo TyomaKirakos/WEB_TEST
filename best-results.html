@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
+    <title>WEB_TEST</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <script type="module" src="js/index.js" defer></script>
@@ -13,7 +13,11 @@
     <header class="header">
         <div class="header__content container">
             <a href="index.html" class="header__logo logo"><img src="img/Logo.svg" alt="WEB_TEST" class="logo__img"></a>
-            <div class="header__head-btns head-btns not-authorized-btns">
+            <div class="header__head-btns head-btns not-authorized-btns"">
+                <a href="login.html" class="head-btns__login-btn head-btn">Вход</a>
+                <a href="registration.html" class="head-btns__register-btn head-btn">Регистрация</a>
+            </div>
+            <div class="header__head-btns head-btns authorized-btns">
                 <p class="head-btn head-btns__logout-btn logout-btn">Выход</p>
                 <a href="profile.html" class="head-btn head-btns__profile-btn">Профиль</a>
             </div>
@@ -24,34 +28,40 @@
             <div class="main__link-to-main-block link-to-main-block">
                 <a href="index.html" class="link-to-main-block__link-to-main just-text">← На главную</a>
             </div>
-            <div class="main__profile-page profile-page">
-                <h1 class="profile-page__heading big-heading">Личный кабинет</h1>
-                <div class="profile-page__users-info users-info">
-                    <img src="img/profile/profile-picture.svg" alt="Your profile picture" class="users-info__profile-picture profile-picture">
-                    <div class="users-info__users-info-text-block users-info-text-block">
-                        <p class="users-info-text-block__info-name blue-bold-text">
-                            Логин
-                        </p>
-                        <p class="users-info-text-block__info just-text login-info">Login</p>
-
-                        <p class="users-info-text-block__info-name blue-bold-text">
-                            Ваш уровень
-                        </p>
-                        <p class="users-info-text-block__info just-text level-info">Уровень</p>
-                        <button class="btn users-info-text-block__log-out-btn logout-btn">Выйти</button>
+            <div class="main__best-results-page best-results-page">
+                <h2 class="best-results-page__heading big-heading">Олимп WEB_TEST</h2>
+                <div class="best-results-page__best-result-table best-result-table">
+                    <div class="best-result-table__table-head table-cell table-head">
+                        <p class="table-cell__text just-text">№</p>
                     </div>
-                </div>
-                <div class="profile-page__users-results users-results">
-                    <p class="users-results__result blue-bold-text">
-                        Ваш лучший результат: <span class="result__number best-result">0%</span>
-                    </p>
-                    <p class="users-results__result blue-bold-text">
-                        Ваш последний результат: <span class="result__number last-result">0%</span>
-                    </p>
-                    <p class="users-results__result blue-bold-text">
-                        Время прохождения лучшего результата: <span class="result__number time-of-best">0:00</span>
-                    </p>
-                    <button class="users-result__edit-tasks-btn edit-tasks-btn btn">Редактировать задания</button>
+                    <div class="best-result-table__table-head table-cell table-head">
+                        <p class="table-cell__text just-text">Ник</p>
+                    </div>
+                    <div class="best-result-table__table-head table-cell table-head">
+                        <p class="table-cell__text just-text">Время</p>
+                    </div>
+                    <div class="best-result-table__table-head table-cell table-head">
+                        <p class="table-cell__text just-text">Счёт</p>
+                    </div>
+
+
+
+                    <div class="best-result-table__table-head table-cell">
+                        <p class="table-cell__text just-text">1</p>
+                    </div>
+                    <div class="best-result-table__table-head table-cell">
+                        <p class="table-cell__text just-text">faaaaaaaaaaaaaaaaaaag</p>
+                    </div>
+                    <div class="best-result-table__table-head table-cell">
+                        <p class="table-cell__text just-text">10:20</p>
+                    </div>
+                    <div class="best-result-table__table-head table-cell">
+                        <p class="table-cell__text just-text">90%</p>
+                    </div>
+
+
+
+
                 </div>
             </div>
         </div>

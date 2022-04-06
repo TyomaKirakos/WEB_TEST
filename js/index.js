@@ -19,7 +19,6 @@ if (currentPageURL == 'login.html'){
     registration();
 } else if (currentPageURL == 'profile.html'){
     profileGenerating();
-    logout();
 } else if (currentPageURL == 'start-fast-test.html' || currentPageURL == 'start-marathon-test.html'){
     fillTasksInLS();
 } else if (currentPageURL == 'fast-test.html'){
@@ -28,6 +27,8 @@ if (currentPageURL == 'login.html'){
 } else if(currentPageURL == 'marathon-test.html'){
     stopwatch();
     marathonTest();
+} else if (currentPageURL == 'best-results.html'){
+    checkLocalStorage();
 } else if (currentPageURL == 'index.html'){
     checkLocalStorage();
     testDirecting();
@@ -35,8 +36,9 @@ if (currentPageURL == 'login.html'){
 } else {
     checkLocalStorage();
     testDirecting();
-    logout();
 }
+
+logout();
 
 
 
