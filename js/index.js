@@ -5,8 +5,8 @@ import registration from "./modules/registration.js";
 import logout from "./modules/logout.js";
 import profileGenerating from "./modules/profileGenerating.js";
 import fillTasksInLS from "./modules/fillTasksInLS.js";
-import fastTest from "./modules/fastTest.js"
-import stopwatch from "./modules/stopwatch.js"
+import fastTest from "./modules/fastTest.js";
+import stopwatch from "./modules/stopwatch.js";
 
 let currentPageURL = document.location.href;
 currentPageURL = currentPageURL.split('/');

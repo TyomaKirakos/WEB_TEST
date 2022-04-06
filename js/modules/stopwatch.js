@@ -1,13 +1,22 @@
 const stopwatch = () => {
     const stopwatchMinBlock = document.querySelector('.test-stopwatch__minutes');
     const stopwatchSecBlock = document.querySelector('.test-stopwatch__seconds');
+    const finishBtn = document.querySelector('.test-page__finish-btn');
 
-    // Секундомер
     let time;
+    let stopwatch;
+    
+    // Секундомер
+
+    window.addEventListener('load', () => {
+        start();
+    })
+
+    finishBtn.addEventListener('click', stopStopwatch);
 
     function start(){
         time = 0;
-        setInterval(stopWatch, 1000);
+        stopwatch = setInterval(stopWatch, 1000);
     }
     
     function stopWatch(){
@@ -25,10 +34,9 @@ const stopwatch = () => {
         }
     }
 
-
-    window.addEventListener('load', () => {
-        start();
-    })
+    function stopStopwatch(){
+        clearInterval(stopwatch);
+    }
 }
 
 export default stopwatch;

@@ -1,10 +1,21 @@
 let fastTest = () => {
+    const linkBlock = document.querySelector('.link-block-without-stopwatch');
+    const linkWithStopwatchBlock = document.querySelector('.test-page-link-to-main');
     const testBlock = document.querySelector('.test-page__tasks-block');
-    const testPagination = document.querySelector('.tasks-pagination');
+    // const testPagination = document.querySelector('.tasks-pagination');
     const finishBtn = document.querySelector('.test-page__finish-btn');
+    const mainPart = document.querySelector('.main__content');
+    const testPage = document.querySelector('.test-page');
 
     let tasks = JSON.parse(localStorage.tasks);
     let currentTasks = [];
+
+    let score;
+    let maxRightAnswers;
+    let percentScore;
+    let timeOfTest;
+
+    linkBlock.style.display = 'none';
 
     // Отбор заданий в случайном пордяке
     for (let i = 0; i < 5; i++){
@@ -13,7 +24,7 @@ let fastTest = () => {
         tasks.splice(taskNumber, 1);
     }
 
-    console.log(currentTasks);
+    // console.log(currentTasks);
 
     // генерация карточек с заданиями
     currentTasks.forEach((task, index) => {
@@ -50,18 +61,19 @@ let fastTest = () => {
         testBlock.append(taskBlock);
 
         // генерация номеров страниц
-        let taskPageBtn = document.createElement('button');
-        taskPageBtn.classList.add('tasks-pagination__task-number', 'btn', `task-order_${index}`);
-        taskPageBtn.textContent = index + 1;
-        testPagination.append(taskPageBtn);
+        // let taskPageBtn = document.createElement('button');
+        // taskPageBtn.classList.add('tasks-pagination__task-number', 'btn', `task-order_${index}`);
+        // taskPageBtn.textContent = index + 1;
+        // testPagination.append(taskPageBtn);
     });
 
     // Заканчивание теста
     finishBtn.addEventListener('click', calculatingResults);
 
+    // расчет результатов
     function calculatingResults(){
-        let score = 0;
-        let maxRightAnswers = 0;
+        score = 0;
+        maxRightAnswers = 0;
         let optionsBlocks = document.querySelectorAll('.task-options');
     
         // Вычисление общего кол-ва правильных ответов
@@ -97,6 +109,86 @@ let fastTest = () => {
             })   
         })
         console.log(score);
+
+        percentScore = Math.round(100 / maxRightAnswers * score);
+        console.log(percentScore);
+
+        timeOfTest = document.querySelector('.test-stopwatch').textContent;
+        console.log(timeOfTest);
+
+        generatingResultPage();
+    }
+
+    // генерация страницы с результатами
+    function generatingResultPage(){
+        linkBlock.style.display = 'block';
+        linkWithStopwatchBlock.style.display = 'none';
+
+        let resultPage = document.createElement('div');
+        resultPage.classList.add('main__result-page', 'result-page');
+
+        if (percentScore >= 60){
+            resultPage.innerHTML = `<div class="result-page__results-block results-block">
+            <div class="results-block__result-text result-text">
+                <h1 class="result-text__heading big-heading">Ваш результат</h1>
+                <div class="result-text__result-info result-info">
+                    <div class="result-info__result-percent-block result-percent-block">
+                        <p class="result-percent-block__percent"><span class="percent__percent-number">${percentScore}</span>%</p>
+                        <div class="result-percent-block__percent-diagram percent-diagram">
+                            <div class="percent-diagram__percent-line"></div>
+                        </div>
+                    </div>
+                    <p class="result-info__text-info just-text">
+                        Правильные ответы <span class="text-info__right-answers-num">${score}</span>/<span class="text-info__all-answers-num">${maxRightAnswers}</span>
+                    </p>
+                    <p class="result-info__text-info just-text">
+                        Время прохождения <span class="text-info__time">${timeOfTest}</span>
+                    </p>
+                </div>
+            </div>
+            <img src="img/tests-results/good-result.svg" alt="Хороший результат!" class="results-block__result-img img">
+        </div>
+        <div class="result-page__result-block-btns result-block-btns btns-block">
+            <a href="index.html" class="result-block-btns__end-btn end-btn">Завершить</a>
+            <a href="start-fast-test.html" class="result-block-btns__retake-test-btn retake-fast-test-btn btn">Пройти ещё раз</a>
+            <a href="best-results.html" class="results-btn btn result-block-btns__results-btn">Лучшие результаты</a>
+        </div>`
+        } else{
+            resultPage.innerHTML = `<div class="result-page__results-block results-block">
+            <div class="results-block__result-text result-text">
+                <h1 class="result-text__heading big-heading">Ваш результат</h1>
+                <div class="result-text__result-info result-info">
+                    <div class="result-info__result-percent-block result-percent-block">
+                        <p class="result-percent-block__percent"><span class="percent__percent-number">${percentScore}</span>%</p>
+                        <div class="result-percent-block__percent-diagram percent-diagram">
+                            <div class="percent-diagram__percent-line"></div>
+                        </div>
+                    </div>
+                    <p class="result-info__text-info just-text">
+                        Правильные ответы <span class="text-info__right-answers-num">${score}</span>/<span class="text-info__all-answers-num">${maxRightAnswers}</span>
+                    </p>
+                    <p class="result-info__text-info just-text">
+                        Время прохождения <span class="text-info__time">${timeOfTest}</span>
+                    </p>
+                </div>
+            </div>
+            <img src="img/tests-results/bad-result.svg" alt="Ты можешь лучше!" class="results-block__result-img img">
+        </div>
+        <div class="result-page__result-block-btns result-block-btns btns-block">
+            <a href="index.html" class="result-block-btns__end-btn end-btn">Завершить</a>
+            <a href="start-fast-test.html" class="result-block-btns__retake-test-btn retake-fast-test-btn btn">Пройти ещё раз</a>
+            <a href="best-results.html" class="results-btn btn result-block-btns__results-btn">Лучшие результаты</a>
+        </div>`
+        }
+
+        console.log(resultPage);
+        testPage.remove();
+        mainPart.append(resultPage);
+
+        let percentLine = document.querySelector('.percent-diagram__percent-line');
+        console.log(percentLine);
+        percentLine.style.width = `${percentScore}%`;
+        window.scrollTo(0, 0);
     }
 }
 
