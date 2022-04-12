@@ -8,6 +8,7 @@ import fillTasksInLS from "./modules/fillTasksInLS.js";
 import fastTest from "./modules/fastTest.js";
 import marathonTest from "./modules/marathonTest.js"
 import stopwatch from "./modules/stopwatch.js";
+import bestResultTableGenerating from "./modules/bestResultTable.js"
 
 let currentPageURL = document.location.href;
 currentPageURL = currentPageURL.split('/');
@@ -29,6 +30,7 @@ if (currentPageURL == 'login.html'){
     marathonTest();
 } else if (currentPageURL == 'best-results.html'){
     checkLocalStorage();
+    bestResultTableGenerating();
 } else if (currentPageURL == 'index.html'){
     checkLocalStorage();
     testDirecting();
