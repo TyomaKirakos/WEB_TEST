@@ -25,10 +25,9 @@ if (currentPageURL == 'login.html'){
     registration();
 } else if (currentPageURL == 'profile.html'){
     profileGenerating();
+} else if (currentPageURL == 'start-fast-test.html' || currentPageURL == 'start-marathon-test.html'){
+    fillTasksInLS();
 } 
-// else if (currentPageURL == 'start-fast-test.html' || currentPageURL == 'start-marathon-test.html'){
-//     fillTasksInLS();
-// } 
 else if (currentPageURL == 'fast-test.html'){
     fastTest();
     stopwatch();
