@@ -36,7 +36,13 @@ let fillTasksInLS = () => {
                 question: "Где можно использовать JavaScript?",
                 options: ["Веб-приложения", "Мобильные приложения", "Серверные приложения", "Во всех перечисленных"],
                 rightAnswers: ["Во всех перечисленных"]
-            }
+            },
+            {
+                id: 6,
+                question: "Как можно объявить переменную в JavaScript?",
+                options: ["let a;", "const a;", "var a;", "$a"],
+                rightAnswers: ["let a;", "var a;"]
+            },
         ];
 
         localStorage.setItem("tasks", JSON.stringify(tasks));

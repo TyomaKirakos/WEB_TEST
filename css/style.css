@@ -12,6 +12,7 @@
 
 .main{
     margin-bottom: 150px;
+    min-height: 70vh;
 }
 
 .logo{
@@ -333,7 +334,7 @@
 /* login.html & registration.html */
 .log-reg-part{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(90deg, #0462AC 0%, #3880AC 52.08%, #54BCDC 100%);
     display: flex;
     flex-direction: column;
@@ -443,7 +444,7 @@
     width: 100%;
 }
 
-.submit-block__log-reg-error-text{
+.submit-block__log-reg-error-text, .add-task-form__error-text{
     font-size: 16px;
     font-weight: 500;
     color: #FF0000;
@@ -549,6 +550,7 @@
 }
 
 .users-result__edit-tasks-btn{
+    text-decoration: none;
     margin-top: 25px;
     padding: 15px 25px;
     background-color: var(--main-col);
@@ -636,6 +638,7 @@
 /* Блок вопроса */
 
 .task-block{
+    position: relative;
     width: 100%;
     padding: 50px 100px;
     background-color: var(--soft-blue);
@@ -927,6 +930,131 @@
     font-weight: bold;
     justify-self: center;
 }
+
+/* taskRedactor.html */
+
+.task-redactor-page{
+    position: relative;
+    min-height: 50vh;
+}
+
+.task-redactor-page__warning-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.task-block__delete-task-btn{
+    font-weight: 100;
+    transform: rotate(45deg);
+    font-size: 35px !important;
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--main-col);
+    box-shadow: 0 0 0px 6px white;
+}
+
+.task-block__delete-task-btn:hover, .add-task-btn:hover{
+    background-color: var(--main-col-hover);
+}
+
+.task-block__task-info{
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+}
+
+.add-task-btn{
+    font-weight: 100;
+    position: fixed;
+    right: 5vw;
+    bottom: 5vh;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--main-col);
+}
+
+/* модальное окно добавления задания */
+
+.modal-area{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5vh 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-items: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal-window{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-window__close-btn{
+    font-weight: 100;
+    transform: rotate(45deg);
+    font-size: 35px !important;
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: var(--main-col);
+    border-radius: 50%;
+}
+
+.modal-window__close-btn:hover{
+    background-color: var(--main-col-hover);
+}
+
+.add-task-form{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-task-form input[type="text"]{
+    background: none;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+.add-task-form .task-block__task-text::placeholder{
+    color: var(--main-col);
+}
+
+.add-task-form__error-text{
+    margin-bottom: 30px;
+    text-align: center;
+    opacity: 0;
+    cursor: default;
+}
+
+.add-task-form__add-btn{
+    padding: 15px;
+    background-color: var(--main-col);
+}
+
+.add-task-form__add-btn:hover{
+    background-color: var(--main-col-hover);
+}
+
 
 /* -------------------------------------- Медиа запросы ----------------------------------------------- */
 /* ------------- 1620 px и меньше ----------- */

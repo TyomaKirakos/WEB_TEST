@@ -69,7 +69,7 @@ const registration = () => {
                     password: passwordInput.value.trim(),
                     bestResult: 0,
                     lastResult: 0,
-                    bestResultTime: '00:00'
+                    bestResultTime: '0:00'
                 };
                 users.push(user);
                 localStorage.setItem('users', JSON.stringify(users));
