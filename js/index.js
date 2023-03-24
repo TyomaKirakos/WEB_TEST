@@ -50,6 +50,7 @@ else if (currentPageURL == 'fast-test.html'){
     testDirecting();
     logout();
 } else {
+    fillTasksInLS();
     changingNavBtns();
     checkLocalStorage();
     testDirecting();
